@@ -1,5 +1,7 @@
 $primary: #ff874a;
-
+* {
+  box-sizing: border-box;
+}
 @mixin coverBg() {
   background-size: cover;
   background-repeat: no-repeat;
@@ -60,7 +62,9 @@ h1 {
 svg {
   width: 12px;
   height: 12px;
-  transition: fill 0.25s, stroke 0.25s;
+  transition:
+    fill 0.25s,
+    stroke 0.25s;
 }
 
 .content {
@@ -355,5 +359,119 @@ svg {
 
   input {
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .root {
+    padding: 0 10px;
+  }
+  h1 {
+    margin-top: 40px;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .app {
+    margin-top: 20px;
+    width: auto;
+    padding: 10px;
+  }
+  .content {
+    row-gap: 15px;
+  }
+  .current {
+    display: flex;
+    column-gap: 7px;
+    &-image {
+      width: 50px;
+      height: 50px;
+    }
+    &-info {
+      &__track {
+        font-size: 16px;
+        line-height: 1.2;
+      }
+    }
+  }
+  .controls {
+    margin-top: 5px;
+    .icon {
+      &-pause,
+      &-play {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    &-buttons {
+      column-gap: 20px;
+    }
+    &-button {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &-progress {
+      margin-top: 10px;
+    }
+  }
+  .list {
+    &-title {
+      font-size: 18px;
+      line-height: 1.2;
+    }
+  }
+  .items {
+    row-gap: 10px;
+    margin-top: 10px;
+  }
+  .item {
+    gap: 5px;
+    grid-template-columns: 30px 3fr 2fr 2fr auto;
+    p {
+      font-size: 10px;
+      line-height: 1.2;
+    }
+    &-image {
+      width: 30px;
+      height: 30px;
+    }
+    &-group {
+      font-size: 9px;
+      line-height: 1.2;
+    }
+    &-track {
+      font-size: 11px;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+    &-titles {
+      margin-left: 0;
+    }
+    &-play {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .handling {
+    column-gap: 5px;
+    .icon {
+      &-repeat,
+      &-sound {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .volume {
+    left: initial;
+    right: 0;
+    padding: 5px;
+
+    input {
+      cursor: pointer;
+    }
   }
 }
